@@ -1,4 +1,4 @@
-<img src="https://dev.azure.com/RM550841/59de0c82-656a-42f9-857a-88ff284802e5/_apis/git/repositories/cd9ac2c8-fef1-4146-bac7-59b7a62c8d20/items?path=/backend-.net/banner_geniusxp.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main&resolveLfs=true&%24format=octetStream&api-version=5.0">
+<img src="https://github.com/geniusxp/backend-dotnet/blob/main/backend-.net/banner_geniusxp.png">
 
 # Sobre o GeniusXP
 GeniusXP é uma plataforma centralizada para gestão de eventos que simplifica operações como inscrições, pagamentos e check-in, enquanto aumenta o engajamento com enquetes e networking. A inteligência artificial da GeniusXP utiliza as preferências dos usuários para oferecer uma experiência altamente personalizada e otimizar o planejamento. Com análise de sentimento e assistência virtual, a plataforma proporciona interações mais significativas, elevando a eficiência da gestão e tornando os eventos mais impactantes para cada participante.
@@ -13,7 +13,7 @@ A complexidade adicional trazida por microsserviços, como a necessidade de orqu
 Embora a arquitetura monolítica possa, em alguns casos, oferecer limitações de escalabilidade, essas limitações só se tornam relevantes conforme o projeto cresce substancialmente. Nesse momento inicial, os eventos menores que a GeniusXP está organizando e gerenciando não exigem a escalabilidade granular e distribuída de uma arquitetura de microsserviços. Quando a base de clientes e a complexidade das operações crescerem, podemos considerar uma migração para microsserviços, mas isso será feito de maneira gradual e estratégica, conforme a demanda exigir.
 
 # Arquitetura da Solução
-<img src="https://dev.azure.com/RM550841/59de0c82-656a-42f9-857a-88ff284802e5/_apis/git/repositories/cd9ac2c8-fef1-4146-bac7-59b7a62c8d20/items?path=/backend-.net/GeniusXP_Devops_Arq.png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main&resolveLfs=true&%24format=octetStream&api-version=5.0">
+<img src="https://github.com/geniusxp/backend-dotnet/blob/main/backend-.net/GeniusXP_Devops_Arq.png">
 
 # Design Pattern Aplicado
 
@@ -93,12 +93,12 @@ Para executar e testar a API GeniusXP, siga os passos abaixo:
 
 1. Acesse o seguinte endereço para iniciar o projeto:
 ```
-https://geniusxp-api.azurewebsites.net
+https://geniusxpbackend.azurewebsites.net
 ```
 
 2. Para visualizar a documentação e testar os endpoints da API, acesse o Swagger no seguinte link:
 ```
-https://geniusxp-api.azurewebsites.net/swagger/index.html
+https://geniusxpbackend.azurewebsites.net/swagger/index.html
 ```
 O Swagger fornece uma interface interativa para explorar os recursos da API diretamente no navegador.
 
@@ -197,7 +197,7 @@ Corpo da Requisição
 - [DELETE] /api/user/{id}
 
 # Vídeo Demonstração
-Para ver o vídeo de demonstração da aplicação, acesse: https://youtu.be/UvQf4g5VyBg
+Para ver o vídeo de demonstração da aplicação, acesse: https://youtu.be/dGRqljYEHUw?si=Iu469E2CK7zpNl8H
 
 # Equipe GeniusXP
 - RM99565 - Erick Nathan Capito Pereira
