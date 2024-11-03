@@ -105,6 +105,14 @@ Verifica se o método UpdateUser atualiza corretamente os dados de um usuário e
 ### 3.8 UpdateUser_ReturnsNotFound_WhenUserDoesNotExist
 Verifica se UpdateUser retorna NotFound ao tentar atualizar um usuário que não existe.
 
+# Aplicação de Inteligência Artificial
+
+A ideia da EventPredictionController é fornecer uma solução automatizada para prever a duração de um evento com base em dados de entrada, como número de participantes, tipo de evento, número de atividades e data. Essa previsão ajuda organizadores a planejar melhor seus eventos, otimizando tempo e recursos de acordo com o tipo e a escala do evento.
+
+A controller integra aprendizado de máquina utilizando a biblioteca ML.NET para processar os dados históricos e treinar um modelo de regressão que faz previsões. Se o modelo não estiver previamente treinado e salvo, a controller realiza o treinamento automaticamente na inicialização.
+
+Ao oferecer um endpoint que aceita entradas personalizadas e retorna a previsão de duração do evento, a controller facilita a tomada de decisões baseada em dados para planejamento e gerenciamento de eventos.
+
 # Instruções para executar o projeto (Local)
 Para executar o projeto localmente, é necessário possuir alguns programas e ferramentas instaladas e seguir esses passos:
 
