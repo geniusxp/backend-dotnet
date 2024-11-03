@@ -126,14 +126,14 @@ Para executar o projeto localmente, é necessário possuir alguns programas e fe
 Abra o terminal ou o Git Bash e execute o seguinte comando para clonar o repositório do projeto:
 
 ```bash
-git clone https://github.com/geniusxp/backend-.net
+git clone https://github.com/geniusxp/backend-dotnet
 ```
 
 ## Passo 2: Navegar até a Pasta do Projeto
 Depois de clonar o repositório, navegue até a pasta raiz do projeto:
 
 ```bash
-cd backend-.net
+cd backend-dotnet
 ```
 
 ## Passo 3: Restaurar as Dependências
