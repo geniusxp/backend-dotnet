@@ -35,7 +35,7 @@ O SRP estabelece que uma classe deve ter uma única responsabilidade, ou seja, e
 
 As controllers do projeto estão focadas exclusivamente em gerenciar operações relacionadas aos seus respectivos domínios, como Evento, Dia de Evento, Autenticação, Usuario, Ingresso etc. Isso significa que, se alguma mudança for necessária nas regras de negócio sobre dias de eventos, por exemplo, a modificação se limitará a essa classe ou a outras diretamente relacionadas a essa responsabilidade. Isso está de acordo com o SRP, pois a classe tem uma função bem definida e não está sobrecarregada com outras responsabilidades que não pertencem a ela, como a lógica de negócios mais complexa ou outros aspectos do gerenciamento de eventos.
 
-## 2. Dependendy Injection (DI)
+## 2. Dependency Injection (DI)
    
 Dependency Injection é um padrão de design que permite que as dependências sejam fornecidas a uma classe, em vez de ela mesma instanciar essas dependências. Isso promove a inversão de controle e facilita a substituição e o teste de componentes.
 
