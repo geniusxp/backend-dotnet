@@ -27,6 +27,84 @@ O uso do Builder traz benefícios claros:
 
 Assim, o padrão Builder foi implementado para otimizar a construção das classes da API, promovendo maior flexibilidade e manutenção eficiente.
 
+# Princípios SOLID e Clean Code Aplicados
+
+## 1. Single Responsability Principle (SRP)
+   
+O SRP estabelece que uma classe deve ter uma única responsabilidade, ou seja, ela deve ter um único motivo para mudar. Isso torna o código mais fácil de manter e de entender.
+
+As controllers do projeto estão focadas exclusivamente em gerenciar operações relacionadas aos seus respectivos domínios, como Evento, Dia de Evento, Autenticação, Usuario, Ingresso etc. Isso significa que, se alguma mudança for necessária nas regras de negócio sobre dias de eventos, por exemplo, a modificação se limitará a essa classe ou a outras diretamente relacionadas a essa responsabilidade. Isso está de acordo com o SRP, pois a classe tem uma função bem definida e não está sobrecarregada com outras responsabilidades que não pertencem a ela, como a lógica de negócios mais complexa ou outros aspectos do gerenciamento de eventos.
+
+## 2. Dependendy Injection (DI)
+   
+Dependency Injection é um padrão de design que permite que as dependências sejam fornecidas a uma classe, em vez de ela mesma instanciar essas dependências. Isso promove a inversão de controle e facilita a substituição e o teste de componentes.
+
+Exemplo:
+```csharp
+private readonly AppDbContext _context;
+
+public EventDaysController(AppDbContext context) { _context = context; }
+
+```
+Como AppDbContext é injetado, a classe EventDaysController pode ser facilmente testada usando um mock ou uma instância alternativa de AppDbContext, sem a necessidade de uma instância concreta do banco de dados em si. Isso facilita a criação de testes unitários e de integração.
+
+Se no futuro for necessário mudar a forma como os dados são armazenados ou introduzir um repositório, basta alterar a injeção de dependência. Isso torna a aplicação mais modular e mais fácil de modificar sem grandes alterações no código.
+
+O controlador não está acoplado a uma instância específica de AppDbContext, o que significa que ele não se preocupa com a criação ou gerenciamento do ciclo de vida dessa dependência.
+
+## 3. Clean Code
+
+Os métodos e variáveis têm nomes intuitivos, como DeleteEventDay e foundEventDay, que descrevem claramente a intenção e o propósito do código. Isso facilita a compreensão, especialmente para outros desenvolvedores que possam trabalhar no código posteriormente.
+
+Os métodos utilizam return NotFound(), return NoContent(), return BadRequest() etc. que são boas práticas para indicar corretamente o status da operação HTTP. Isso melhora a comunicação com os consumidores da API, que podem entender facilmente se a operação foi bem-sucedida ou se o recurso solicitado não foi encontrado.
+
+# Testes Automatizados Desenvolvidos
+Para garantir a qualidade do código desenvolvido, foram construídos os seguintes testes:
+
+## 1. EventDaysController
+
+A controller de dias de evento é testada das seguintes maneiras:
+
+### 1.1 DeleteEventDay_ReturnsNoContent_WhenEventDayExists
+Verifica se o método DeleteEventDay retorna um resultado NoContentResult (código de status HTTP 204) quando um dia de evento que existe é deletado com sucesso.
+
+## 2. TicketController
+
+A controller de ingresso é testada das seguintes maneiras:
+
+### 2.1 CreateTicket_ReturnsCreated_WhenTicketCreatedSuccessfully
+Verifica se o método CreateTicket retorna um resultado CreatedAtActionResult (código de status HTTP 201) quando um ticket é criado com sucesso.
+
+### 2.2 DeleteTicket_ReturnsNoContent_WhenTicketDeletedSuccessfully
+Verifica se o método DeleteTicket retorna um resultado NoContentResult (código de status HTTP 204) quando um ticket existente é deletado com sucesso.
+
+## 3. UserController
+A controller de usuários é testada das seguintes maneiras:
+
+### 3.1 CreateUser_ReturnsCreated_WhenUserCreatedSuccessfully
+Verifica se o método CreateUser cria um usuário corretamente e retorna um CreatedAtActionResult com um UserSimplifiedResponse.
+
+### 3.2 FindAllUsers_ReturnsOk_WhenUsersExist
+Verifica se o método FindAllUsers retorna uma lista de usuários com um status Ok quando existem usuários cadastrados.
+
+### 3.3 FindUserById_ReturnsOk_WhenUserExists
+Verifica se FindUserById retorna os dados de um usuário específico com um status Ok quando o usuário existe.
+
+### 3.4 FindUserById_ReturnsNotFound_WhenUserDoesNotExist
+Verifica se o método FindUserById retorna NotFound quando o usuário solicitado não existe.
+
+### 3.5 DeleteUser_ReturnsNoContent_WhenUserDeletedSuccessfully
+Verifica se DeleteUser exclui um usuário existente e retorna NoContentResult.
+
+### 3.6 DeleteUser_ReturnsNotFound_WhenUserDoesNotExist
+Verifica se DeleteUser retorna NotFound ao tentar deletar um usuário que não existe.
+
+### 3.7 UpdateUser_ReturnsNoContent_WhenUserUpdatedSuccessfully
+Verifica se o método UpdateUser atualiza corretamente os dados de um usuário existente e retorna NoContentResult.
+
+### 3.8 UpdateUser_ReturnsNotFound_WhenUserDoesNotExist
+Verifica se UpdateUser retorna NotFound ao tentar atualizar um usuário que não existe.
+
 # Instruções para executar o projeto (Local)
 Para executar o projeto localmente, é necessário possuir alguns programas e ferramentas instaladas e seguir esses passos:
 
